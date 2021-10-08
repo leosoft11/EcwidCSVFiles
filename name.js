@@ -11,24 +11,32 @@ if (document.querySelector('.main-overlay')) {
             value: document.querySelector('input[name=sku]') && document.querySelector('input[name=sku]').checked
          },
          { 
+            name: 'subtitle',
+            value: document.querySelector('input[name=subtitle]') && document.querySelector('input[name=subtitle]').checked
+         },
+         { 
             name: 'description',
             value: document.querySelector('input[name=description]') && document.querySelector('input[name=description]').checked
          },
          { 
+            name: 'showOnFrontpage',
+            value: document.querySelector('input[name=showOnFrontpage]') && document.querySelector('input[name=showOnFrontpage]').checked  
+         },
+         { 
+            name: 'category1',
+            value: document.querySelector('input[name=category1]') && document.querySelector('input[name=category1]').checked  
+        },
+        { 
+            name: 'category2',
+            value: document.querySelector('input[name=category1]') && document.querySelector('input[name=category2]').checked  
+        },
+        { 
+            name: 'category3',
+            value: document.querySelector('input[name=category1]') && document.querySelector('input[name=category3]').checked  
+         },
+         { 
             name: 'image',
             value: document.querySelector('input[name=image]') && document.querySelector('input[name=image]').checked
-         },
-         { 
-             name: 'showOnFrontpage',
-             value: document.querySelector('input[name=showOnFrontpage]') && document.querySelector('input[name=showOnFrontpage]').checked  
-         },
-         { 
-             name: 'subtitle',
-             value: document.querySelector('input[name=subtitle]') && document.querySelector('input[name=subtitle]').checked
-         },
-         { 
-             name: 'category1',
-             value: document.querySelector('input[name=category1]') && document.querySelector('input[name=category1]').checked  
          },
          { 
              name: 'ribbon',
@@ -41,6 +49,10 @@ if (document.querySelector('.main-overlay')) {
          { 
              name: 'weight',
              value: document.querySelector('input[name=weight]') && document.querySelector('input[name=weight]').checked  
+         },
+         { 
+            name: 'price',
+            value: document.querySelector('input[name=price]') && document.querySelector('input[name=price]').checked 
          },
          { 
              name: 'recommended_price',
@@ -64,7 +76,7 @@ if (document.querySelector('.main-overlay')) {
          },
          { 
              name: 'shippingType',
-             value: document.querySelector('input[name=shippingType]') &&  document.querySelector('input[name=showOnFrontpage]').checked
+             value: document.querySelector('input[name=shippingType]') &&  document.querySelector('input[name=shippingType]').checked
          },
          { 
              name: 'shippingMethodMarkup',
@@ -110,10 +122,6 @@ if (document.querySelector('.main-overlay')) {
              name: 'seo_description',
              value: document.querySelector('input[name=seo_description]') && document.querySelector('input[name=seo_description]').checked  
          },
-         { 
-             name: 'price',
-             value: document.querySelector('input[name=price]') && document.querySelector('input[name=price]').checked 
-         },
          {
             name: 'count',
             value: +prompt('Введите кол-во товаров :)') 
@@ -146,6 +154,8 @@ if (document.querySelector('.main-overlay')) {
                     });
                     alert(`Созданые поля: ${product}, кол-во товаров ${item.value}. Нажмите кнопку 'ОК' и скачивание начнется через 5 секунд :)`);
                     setTimeout(() => {
+                         //https://nameless-atoll-14634.herokuapp.com/download
+                        //http://localhost:3000/download
                         window.open("https://nameless-atoll-14634.herokuapp.com/download");
                     },5000)  
             }
@@ -159,8 +169,3 @@ if (document.querySelector('.main-overlay')) {
     alert('Необходимо перейти на страницу #products и нажать [Импорт файлов] и выбрать необходмые поля');
     product = [];
 }
-
-
-
-
-
