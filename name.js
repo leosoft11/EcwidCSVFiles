@@ -153,9 +153,13 @@ if (document.querySelector('.main-overlay')) {
                         console.log(data); // JSON data parsed by `response.json()` call
                     });
                     alert(`Созданые поля: ${product}, кол-во товаров ${item.value}. Нажмите кнопку 'ОК' и скачивание начнется через 5 секунд :)`);
+                    document.querySelector('.loading-panel').style = 'display: block; z-index: 99999';
+                    document.querySelector('.loading-info').textContent = 'Загрузка файла скоро начнется';
                     setTimeout(() => {
                          //https://nameless-atoll-14634.herokuapp.com/download
                         //http://localhost:3000/download
+                        document.querySelector('.loading-panel').style = 'display: none';
+                        document.querySelector('.loading-info').textContent = 'Загрузка панели управления';
                         window.open("https://nameless-atoll-14634.herokuapp.com/download");
                     },5000)  
             }
